@@ -1,0 +1,79 @@
+@import "./header";
+@import "./theme-1";
+@import "./output";
+@import "./buttons";
+
+:root {
+    --mobile: 375px;
+    --desktop: 1440px;
+    
+    --t1mainbg: hsl(222, 26%, 31%);
+    --t1keypadbg: hsl(223, 31%, 20%);
+    --t1screenbg: hsl(224, 36%, 15%);
+    --t1keybg: hsl(225, 21%, 49%);
+    --t1keyshadow: hsl(224, 28%, 35%);
+    --t1equalkeybg: hsl(6, 63%, 50%);
+    --t1equalkeyshadow: hsl(6, 70%, 34%);
+    --t1secondarykeybg: hsl(30, 25%, 89%);
+    --t1secondarykeyshadow: hsl(28, 16%, 65%);
+    --t1text: hsl(221, 14%, 31%);
+
+    --t2mainbg: hsl(0, 0%, 90%);
+    --t2keypadbg:  hsl(0, 5%, 81%);
+    --t2screenbg: hsl(0, 0%, 93%);
+    --t2keybg: hsl(185, 42%, 37%);
+    --t2ckeyshadow: hsl(185, 58%, 25%);
+    --t2equalkeybg: hsl(25, 98%, 40%);
+    --t2equalkeyshadow: hsl(25, 99%, 27%);
+    --t2secondarykeybg: hsl(45, 7%, 89%);
+    --t2secondarykeyshadow: hsl(35, 11%, 61%);
+    --t2text: hsl(60, 10%, 19%);
+
+    --t3mainbg: hsl(268, 75%, 9%);
+    --t3keypadbg: hsl(268, 71%, 12%);
+    --t3keybg: hsl(281, 89%, 26%);
+    --t3keyshadow: hsl(285, 91%, 52%);
+    --t3equalkeybg: hsl(176, 100%, 44%);
+    --t3equalkeyshadow: hsl(177, 92%, 70%);
+    --t3secondarykeybg: hsl(268, 47%, 21%);
+    --t3secondarykeyshadow: hsl(290, 70%, 36%);
+    --t3text: hsl(52, 100%, 62%);
+    --t3secondarytext: hsl(198, 20%, 13%);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+}
+.calculator {
+    width: 400px;
+}
+.calculator-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4,100px);
+    justify-content: center;
+    align-items: center;
+    background-color: var(--t1keypadbg);
+    border-radius: 15px;
+}
+.span-two {
+    grid-column: span 2;
+}
+.buttons-grid > button {
+    cursor: pointer;
+    font-size: 32px;
+    outline: none;
+    margin: .7rem;
+    padding: .6rem .4rem;
+    border-radius: 8px;
+    font-size: 20px;
+}
