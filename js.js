@@ -6,14 +6,20 @@ class Calculator {
     }
     clear(){
         this.currentOperand = ''
-        this.currentOperand = ''
+        this.previousOperand = ''
         this.operation = undefined
     }
     delete(){
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
+        if(this.currentOperand === '0') {
+            this.clear();
+        }
     }
     appendNumber(number){
         if(number === '.' && this.currentOperand.includes('.')) return
+        if(this.currentOperand === '') {
+            this.currentOperand = 0;
+        }
         this.currentOperand = this.currentOperand.toString() + number.toString()
     } 
     chooseOperation(operation){
@@ -69,6 +75,7 @@ class Calculator {
         }
     }
     updateDisplay(){
+        
         this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
         if(this.operation != null){
         this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
@@ -116,3 +123,51 @@ deleteButton.addEventListener('click', button => {
     calculator.delete()
     calculator.updateDisplay()
 })
+
+
+let switches = document.getElementsByClassName('switch');
+
+for (let i of switches) {
+    i.addEventListener('click', function () {
+      let theme = this.dataset.theme;
+    });
+  }
+
+  const switch1 = document.querySelector('.theme-selector1')
+  const switch2 = document.querySelector('.theme-selector2')
+  const switch3 = document.querySelector('.theme-selector3')
+
+function setTheme(theme) {
+    if (theme == 'theme-1') {
+      document.getElementById('switcher-id').href = './themes/theme-1.css';
+      switch1.classList.add('active')
+      switch2.classList.remove('active')
+      switch3.classList.remove('active')
+    } else if (theme == 'theme-2') {
+      document.getElementById('switcher-id').href = './themes/theme-2.css';
+      switch1.classList.remove('active')
+      switch2.classList.add('active')
+      switch3.classList.remove('active')
+    } else if (theme == 'theme-3') {
+      document.getElementById('switcher-id').href = './themes/theme-3.css';
+      switch1.classList.remove('active')
+      switch2.classList.remove('active')
+      switch3.classList.add('active')
+    } 
+    localStorage.setItem('style', theme);
+  }
+
+for (let i of switches) {
+   i.addEventListener('click', function () {
+    let theme = this.dataset.theme;
+    setTheme(theme);
+    });
+}
+
+let style = localStorage.getItem('style');
+
+if (style == null) {
+    setTheme('theme-1');
+} else {
+    setTheme(style);
+}

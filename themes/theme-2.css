@@ -1,0 +1,55 @@
+:root {
+    --t2mainbg: hsl(0, 0%, 90%);
+    --t2keypadbg:  hsl(0, 5%, 81%);
+    --t2screenbg: hsl(0, 0%, 93%);
+    --t2keybg: hsl(185, 42%, 37%);
+    --t2keyshadow: hsl(185, 58%, 25%);
+    --t2equalkeybg: hsl(25, 98%, 40%);
+    --t2equalkeyshadow: hsl(25, 99%, 27%);
+    --t2secondarykeybg: hsl(45, 7%, 89%);
+    --t2secondarykeyshadow: hsl(35, 11%, 61%);
+    --t2text: hsl(60, 10%, 19%);
+}
+
+
+body {
+    background-color: var(--t2mainbg);
+}
+.buttons-grid {
+    background-color: var(--t2keypadbg);
+}
+.output {
+    background-color: var(--t2screenbg);
+}
+.themes-selectors {
+    background: var(--t2keypadbg);
+}
+h1,h2,.current-operand,.previous-operand,.theme-selector1::after,.theme-selector2::after,.theme-selector3::after {
+    color: var(--t2text);
+}
+.theme-selector1,.theme-selector2,.theme-selector3 {
+    background: var(--t2equalkeyshadow);
+}
+#switch-1,#switch-3 {
+    opacity: 0.5;
+}
+
+.switch.active {
+    background: var(--t2equalkeybg);
+    transform: translateX(-50%);
+}
+.skb {
+    background-color: var(--t2secondarykeybg);
+    color: var(--t2text);
+    box-shadow: inset -1px -3px var(--t2secondarykeyshadow);
+}
+.kb {
+    background-color: var(--t2keybg);
+    color: var(--t2secondarykeybg);
+    box-shadow: inset -1px -3px var(--t2keyshadow);
+}
+.ekb {
+    background-color: var(--t2equalkeybg);
+    color: var(--t2secondarykeybg);
+    box-shadow: inset -1px -3px var(--t2equalkeyshadow);
+}

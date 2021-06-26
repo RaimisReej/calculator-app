@@ -12,9 +12,43 @@ h2 {
     display: flex;
 }
 .themes-selectors {
+    position: relative;
     width: 80px;
     height: 20px;
-    background-color: var(--t1keypadbg);
-    border-radius: 20px;
-    
+    border-radius: 20px; 
+}
+.theme-selector1,.theme-selector2,.theme-selector3 {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    top: 5%;
+    cursor: pointer;
+}
+.theme-selector1::after,.theme-selector2::after,.theme-selector3::after {
+    font-size: .8rem;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.theme-selector1 {
+    left: 5%;
+}
+.theme-selector1::after {
+    content: '1';
+}
+.theme-selector2 {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.theme-selector2::after {
+    content: '2';
+}
+.theme-selector3 {
+    right: 5%;
+}
+.theme-selector3::after {
+    content: '3';
 }

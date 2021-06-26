@@ -7,19 +7,3 @@
     align-items: center;
     border: none;
 }
-
-.skb {
-    background-color: var(--t1secondarykeybg);
-    color: var(--t1text);
-    box-shadow: inset -1px -3px var(--t1secondarykeyshadow);
-}
-.kb {
-    background-color: var(--t1keybg);
-    color: var(--t1secondarykeybg);
-    box-shadow: inset -1px -3px var(--t1keyshadow);
-}
-.ekb {
-    background-color: var(--t1equalkeybg);
-    color: var(--t1secondarykeybg);
-    box-shadow: inset -1px -3px var(--t1equalkeyshadow);
-}
